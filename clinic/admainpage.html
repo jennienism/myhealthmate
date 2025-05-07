@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+<style>
+body, html {
+  height: 100%;
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Navbar */
+.header {
+    background-color: #842029;
+    color: white;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.header .logo {
+    display: flex;
+    align-items: center;
+}
+
+.header .logo img {
+    width: 50px;
+    height: auto;
+    margin-right: 10px;
+}
+
+.header .logo h1 {
+    font-size: 20px;
+    margin: 0;
+    font-weight: bold;
+    font-family: alta;
+}
+
+.header .menu ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    margin: 0;
+}
+
+.header .menu ul li {
+    margin: 0 15px;
+    position: relative;
+    font-family: sans-serif;
+}
+
+.header .menu ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    transition: color 0.3s;
+    padding: 10px 15px;
+    display: inline-block;
+}
+
+.header .menu ul li a:hover {
+    color: #ffe082;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 5px;
+}
+
+.header .menu ul li ul {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #007a88;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    z-index: 10;
+}
+
+.header .menu ul li ul li {
+    margin: 0;
+}
+
+.header .menu ul li ul li a {
+    padding: 10px 20px;
+    display: block;
+}
+
+.header .menu ul li:hover ul {
+    display: block;
+}
+
+/*banner*/
+.hero-image {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("gambar/slide1.jpeg");
+  height: 50%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+.hero-text {
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+}
+
+.hero-text button {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 10px 25px;
+  color: black;
+  background-color: #ddd;
+  text-align: center;
+  cursor: pointer;
+}
+
+.hero-text button:hover {
+  background-color: #555;
+  color: white;
+}
+
+.container {
+  position: relative;
+  font-family: Arial;
+}
+
+.text-block {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  background-color: black;
+  color: white;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+
+/* banner */
+.hero-image {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("gambar/slide1.jpeg");
+  height: 50%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+.hero-text {
+  font-family: 'Georgia', serif;
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+}
+
+
+.hero-text a {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 10px 25px;
+  color: black;
+  background-color: #ddd;
+  text-align: center;
+  cursor: pointer;
+}
+
+.hero-text button:hover {
+  background-color: #555;
+  color: white;
+}
+
+/* elemen tiga */
+.info-utama {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 20px;
+    gap: 60px;
+    margin-top: 60px;
+}
+
+.info-utama .item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 150px;
+    transition: transform 0.3s;
+}
+
+.info-utama .item a {
+    text-decoration: none; /* Buang underline */
+    color: inherit; /* Warna mengikut elemen induk */
+}
+
+.info-utama .item a:hover {
+    color: #007BFF; /* Tukar warna apabila hover (opsyenal) */
+}
+
+.info-utama .item img {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 10px;
+    transition: transform 0.3s;
+}
+
+.info-utama .item:hover {
+    transform: scale(1.1);
+}
+
+.info-utama .item img:hover {
+    transform: scale(1.2);
+}
+
+/* portal */
+.portal {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin: 20px;
+}
+
+.portal .card {
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+    width: 300px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.portal .card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+.portal .card img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-bottom: 15px;
+    transition: transform 0.3s;
+}
+
+.portal .card img:hover {
+    transform: scale(1.2);
+}
+
+.portal .card p {
+    font-size: 16px;
+    line-height: 1.5;
+    color: #444;
+}
+
+.portal .card p strong {
+    color: #842029;
+}
+
+           /* footer */
+        .footer {
+            background: linear-gradient(135deg, #f5cec8, #842029);
+            color: #fff;
+            padding: 40px 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .footer-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-section {
+            flex: 1;
+            margin: 10px;
+            min-width: 250px;
+        }
+
+        .footer-section h2 {
+            font-size: 18px;
+            margin-bottom: 15px;
+            
+        }
+
+        .footer-section p {
+            line-height: 1.6;
+        }
+
+        .footer-section ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-section ul li a {
+            color: #f5cec8;
+            text-decoration: none;
+            font-size: 14px;
+            transition: all 0.3s ease;
+        }
+
+        .footer-section ul li a:hover {
+            color: #842029;
+            background-color: #f5cec8;
+            padding: 2px 5px;
+            border-radius: 4px;
+        }
+
+        .footer-section ul li i {
+            margin-right: 8px;
+            color: #f5cec8;
+        }
+
+        .social {
+            display: inline-block;
+            margin: 0 10px;
+            color: #f5cec8;
+            font-size: 20px;
+            transition: color 0.3s ease;
+        }
+
+        .social:hover {
+            color: #842029;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding: 10px 20px;
+            background-color: #842029;
+            color: #e3f2fd;
+            font-size: 12px;
+            margin-top: 20px;
+        }
+
+        .back-to-top {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .back-to-top a {
+            color: #f5cec8;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 14px;
+            transition: color 0.3s ease;
+        }
+
+        .back-to-top a:hover {
+            color: #842029;
+        }
+
+        /* Responsive Styling */
+        @media (max-width: 768px) {
+            .footer-content {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .footer-section {
+                text-align: center;
+                margin: 20px 0;
+            }
+</style>
+</head>
+<body>
+
+    <!-- Header Section (Navbar) -->
+    <header class="header">
+        <div class="logo">
+            <img src="gambar/logo1.png" alt="Logo Malaysia">
+            <h1>E-Health Portal KVS</h1>
+        </div>
+        <nav class="menu">
+            <ul>
+                <li><a href="index.php">Log Out</a></li>
+            </ul>
+        </nav>
+    </header>
+
+<div class="hero-image">
+  <div class="hero-text">
+    <h1 style="font-size:60px">Admin Dashboard</h1>
+    <p>Welcome Admin</p>
+  </div>
+</div>
+
+<section class="info-utama">
+    <div class="item">
+        <a href="rekodcalorie.php">
+            <img src="gambar/info.png" alt="Calorie">
+        </a>
+        <p><a href="rekodcalorie.php">CALORIE CALCULATOR RECORD</a></p>
+    </div>
+    <div class="item">
+        <a href="rekodletter.php">
+            <img src="gambar/list.png" alt="Heart Analysis">
+        </a>
+        <p><a href="rekodletter.php">SUBMISSIONS LETTER RECORD</a></p>
+    </div>
+    <div class="item">
+        <a href="rekodtest.php">
+            <img src="gambar/health.png" alt="Psycological">
+        </a>
+        <p><a href="rekodtest.php">PSYCHOLOGICAL MENTAL HEALTH TEST RECORD</a></p>
+    </div>
+    <div class="item">
+        <a href="users.php">
+            <img src="gambar/users.png" alt="Psycological">
+        </a>
+        <p><a href="users.php">USERS RECORD</a></p>
+    </div>
+</section>
+
+
+<section class="portal">
+    <div class="card">
+        <img src="gambar/naz.png" alt="Admin Nazzatul">
+        <h2>Nazzatul</h2>
+        <p><strong>Our commitment is to keep you healthy!"</strong> This portal makes accessing health information easy for all users.</p>
+    </div>
+    <div class="card">
+        <p><strong>"Data is the key to health."</strong> Health statistics help us plan and provide better services for you.</p>
+    </div>
+    <div class="card">
+        <img src="gambar/zah.png" alt="Admin Zahirah">
+        <h2>Zahirah</h2>
+        <p><strong>"Your support is our inspiration!"</strong> Get health services online quickly and securely.</p>
+    </div>
+</section>
+
+
+<footer class="footer">
+        <div class="footer-content">
+            <!-- About Us Section -->
+            <div class="footer-section">
+                <h2>About Us</h2>
+                <p>Portal Laman Kesihatan Kolej Vokasional Sepang aims to provide students with essential health information and tools for well-being.</p>
+            </div>
+            <!-- Quick Links Section -->
+            <div class="footer-section">
+                <h2>Quick Links</h2>
+                <ul>
+                    <li><a href="#">BMI Calculator</a></li>
+                    <li><a href="#">Calorie Tracker</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                </ul>
+            </div>
+            <!-- Contact Section -->
+            <div class="footer-section">
+                <h2>Contact</h2>
+                <ul>
+                    <li><i class="fas fa-envelope"></i> Email: healthportal@kvsepang.edu.my</li>
+                    <li><i class="fas fa-phone"></i> Phone: +60 123-456-7890</li>
+                    <li><i class="fas fa-map-marker-alt"></i> Address: KV Sepang, Malaysia</li>
+                </ul>
+            </div>
+            <!-- Social Media Section -->
+            <div class="footer-section">
+                <h2>Follow Us</h2>
+                <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="social"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="social"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+        <!-- Back to Top -->
+        <div class="back-to-top">
+            <a href="#">↑ Back to Top</a>
+        </div>
+        <!-- Footer Bottom -->
+        <div class="footer-bottom">
+            &copy; 2024 Portal Laman Kesihatan Kolej Vokasional Sepang. All rights reserved.
+        </div>
+    </footer>
+
+
+</body>
+</html>

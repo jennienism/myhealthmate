@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <title>TeamLead</title>
+    <style>
+/* General Styles */
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            color: #333;
+            scroll-behavior: smooth; /* Smooth scrolling */
+        }
+
+        .container {
+            width: 90%;
+            margin: 0 auto;
+            max-width: 1200px;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* Navbar */
+        .header {
+            background-color: #842029;
+            color: white;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .header .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .header .logo img {
+            width: 50px;
+            height: auto;
+            margin-right: 10px;
+        }
+
+        .header .logo h1 {
+            font-size: 20px;
+            margin: 0;
+            font-weight: bold;
+            font-family: alta;
+        }
+
+        .header .menu ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            margin: 0;
+        }
+
+        .header .menu ul li {
+            margin: 0 15px;
+            position: relative;
+            font-family: sans-serif;
+        }
+
+        .header .menu ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+            transition: color 0.3s, transform 0.3s;
+            padding: 10px 15px;
+            display: inline-block;
+        }
+
+        .header .menu ul li a:hover {
+            color: #fcebe8;
+            background-color: rgba(255, 255, 255, 0.2);
+            border-radius: 5px;
+            transform: scale(1.1); /* Slight scaling effect */
+        }
+
+        .header .menu ul li ul {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: #b50b37;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+            z-index: 10;
+        }
+
+        .header .menu ul li ul li {
+            margin: 0;
+        }
+
+        .header .menu ul li ul li a {
+            padding: 10px 20px;
+            display: block;
+        }
+
+        .header .menu ul li:hover ul {
+            display: block;
+        }
+
+.container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 40px;
+        }
+
+        .section-title {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .team {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+        }
+
+        .member {
+            background-color: #fff;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            padding: 20px;
+            width: 200px;
+        }
+
+        .member img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin-bottom: 10px;
+            border: 2px solid #007BFF;
+        }
+
+        .member h3 {
+            margin: 10px 0;
+            font-size: 18px;
+        }
+
+        .member p {
+            margin: 0;
+            font-size: 14px;
+            color: #666;
+        }
+
+       /* footer */
+        .footer {
+            background: linear-gradient(135deg, #f5cec8, #842029);
+            color: #fff;
+            padding: 40px 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .footer-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-section {
+            flex: 1;
+            margin: 10px;
+            min-width: 250px;
+        }
+
+        .footer-section h2 {
+            font-size: 18px;
+            margin-bottom: 15px;
+            
+        }
+
+        .footer-section p {
+            line-height: 1.6;
+        }
+
+        .footer-section ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-section ul li a {
+            color: #f5cec8;
+            text-decoration: none;
+            font-size: 14px;
+            transition: all 0.3s ease;
+        }
+
+        .footer-section ul li a:hover {
+            color: #842029;
+            background-color: #f5cec8;
+            padding: 2px 5px;
+            border-radius: 4px;
+        }
+
+        .footer-section ul li i {
+            margin-right: 8px;
+            color: #f5cec8;
+        }
+
+        .social {
+            display: inline-block;
+            margin: 0 10px;
+            color: #f5cec8;
+            font-size: 20px;
+            transition: color 0.3s ease;
+        }
+
+        .social:hover {
+            color: #842029;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding: 10px 20px;
+            background-color: #842029;
+            color: #e3f2fd;
+            font-size: 12px;
+            margin-top: 20px;
+        }
+
+        .back-to-top {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .back-to-top a {
+            color: #f5cec8;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 14px;
+            transition: color 0.3s ease;
+        }
+
+        .back-to-top a:hover {
+            color: #842029;
+        }
+
+        /* Responsive Styling */
+        @media (max-width: 768px) {
+            .footer-content {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .footer-section {
+                text-align: center;
+                margin: 20px 0;
+            } /* footer */
+  /* footer */
+        .footer {
+            background: linear-gradient(135deg, #f5cec8, #842029);
+            color: #fff;
+            padding: 40px 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .footer-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-section {
+            flex: 1;
+            margin: 10px;
+            min-width: 250px;
+        }
+
+        .footer-section h2 {
+            font-size: 18px;
+            margin-bottom: 15px;
+            
+        }
+
+        .footer-section p {
+            line-height: 1.6;
+        }
+
+        .footer-section ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-section ul li a {
+            color: #f5cec8;
+            text-decoration: none;
+            font-size: 14px;
+            transition: all 0.3s ease;
+        }
+
+        .footer-section ul li a:hover {
+            color: #842029;
+            background-color: #f5cec8;
+            padding: 2px 5px;
+            border-radius: 4px;
+        }
+
+        .footer-section ul li i {
+            margin-right: 8px;
+            color: #f5cec8;
+        }
+
+        .social {
+            display: inline-block;
+            margin: 0 10px;
+            color: #f5cec8;
+            font-size: 20px;
+            transition: color 0.3s ease;
+        }
+
+        .social:hover {
+            color: #842029;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding: 10px 20px;
+            background-color: #842029;
+            color: #e3f2fd;
+            font-size: 12px;
+            margin-top: 20px;
+        }
+
+        .back-to-top {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .back-to-top a {
+            color: #f5cec8;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 14px;
+            transition: color 0.3s ease;
+        }
+
+        .back-to-top a:hover {
+            color: #842029;
+        }
+
+        /* Responsive Styling */
+        @media (max-width: 768px) {
+            .footer-content {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .footer-section {
+                text-align: center;
+                margin: 20px 0;
+            }
+
+    </style>
+        <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+    <!-- Header Section (Navbar) -->
+    <header class="header">
+        <div class="logo">
+            <img src="gambar/logo1.png" alt="Logo Malaysia">
+            <h1 href="index.php">SYSTEM E-HEALTH KVS</h1>
+        </div>
+        <nav class="menu">
+            <ul>
+                <li><a href="index.php">Main Page</a></li>
+                <li><a href="teamlead.html">Team Lead</a></li>
+                <li><a href="info.html">Information</a></li>
+                <li><a href="loginadmin.php">Admin Page</a></li>
+                <li><a href="login.php">Log Out</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <div class="section-title">Meet the Team Leads</div>
+        <div class="team">
+            <div class="member">
+                <img src="gambar/naz.png" alt="Team Lead 1">
+                <h3>Nazzatul Sofea</h3>
+                <p>Programmer & Innovator</p>
+            </div>
+            <div class="member">
+                <img src="gambar/zah.png" alt="Team Lead 2">
+                <h3>Nur Zahirah</h3>
+                <p>Programmer & Innovator</p>
+            </div>
+        </div>
+    </div>
+
+
+<footer class="footer">
+        <div class="footer-content">
+            <!-- About Us Section -->
+            <div class="footer-section">
+                <h2>About Us</h2>
+                <p>Portal Laman Kesihatan Kolej Vokasional Sepang aims to provide students with essential health information and tools for well-being.</p>
+            </div>
+            <!-- Quick Links Section -->
+            <div class="footer-section">
+                <h2>Quick Links</h2>
+                <ul>
+                    <li><a href="#">BMI Calculator</a></li>
+                    <li><a href="#">Calorie Tracker</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                </ul>
+            </div>
+            <!-- Contact Section -->
+            <div class="footer-section">
+                <h2>Contact</h2>
+                <ul>
+                    <li><i class="fas fa-envelope"></i> Email: healthportal@kvsepang.edu.my</li>
+                    <li><i class="fas fa-phone"></i> Phone: +60 123-456-7890</li>
+                    <li><i class="fas fa-map-marker-alt"></i> Address: KV Sepang, Malaysia</li>
+                </ul>
+            </div>
+            <!-- Social Media Section -->
+            <div class="footer-section">
+                <h2>Follow Us</h2>
+                <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="social"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="social"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+        <!-- Back to Top -->
+        <div class="back-to-top">
+            <a href="#">↑ Back to Top</a>
+        </div>
+        <!-- Footer Bottom -->
+        <div class="footer-bottom">
+            &copy; 2024 Portal Laman Kesihatan Kolej Vokasional Sepang. All rights reserved.
+        </div>
+    </footer>
+
+</body>
+</html>
